@@ -1,0 +1,38 @@
+﻿<dx:DXWindow xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  x:Class="devexpress_horizonal_radiolist.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        Title="MainWindow" Height="350" Width="525">
+    <dx:DXWindow.Resources>
+        <Style x:Key="HorizontalListBoxEdit" TargetType="{x:Type dxe:ListBoxEdit}">
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </dx:DXWindow.Resources>
+    <Grid>
+        <dxe:ListBoxEdit Style="{StaticResource HorizontalListBoxEdit}"
+                         ShowBorder="False"
+            HorizontalAlignment="Left" Height="29" Margin="106,92,0,0" VerticalAlignment="Top" Width="180" >
+            <dxe:ListBoxEdit.Items>
+                <TextBlock>はい</TextBlock>
+                <TextBlock>いいえ</TextBlock>
+                <TextBlock>それ以外</TextBlock>
+            </dxe:ListBoxEdit.Items>
+            <dxe:ListBoxEdit.ItemContainerStyle>
+                <Style TargetType="dxe:ListBoxEditItem" BasedOn="{StaticResource ResourceKey={x:Type dxe:ListBoxEditItem}}">
+                    <Setter Property="Margin" Value="50"/>
+                </Style>
+            </dxe:ListBoxEdit.ItemContainerStyle>
+
+            <dxe:ListBoxEdit.StyleSettings>
+                <dxe:RadioListBoxEditStyleSettings/>
+            </dxe:ListBoxEdit.StyleSettings>
+        </dxe:ListBoxEdit>
+    </Grid>
+</dx:DXWindow>
